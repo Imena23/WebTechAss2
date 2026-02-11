@@ -1,0 +1,244 @@
+### 1. Library Book Management API
+
+# Get all books
+GET http://localhost:8080/api/books
+
+### Get book by ID
+GET http://localhost:8080/api/books/1
+
+### Search books by title
+GET http://localhost:8080/api/books/search?title=Clean
+
+### Add a new book
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt",
+    "isbn": "978-0201616224",
+    "publicationYear": 1999
+}
+
+### Delete a book
+DELETE http://localhost:8080/api/books/1
+
+### 2. Student Registration API
+
+# Get all students
+GET http://localhost:8080/api/students
+
+### Get student by ID
+GET http://localhost:8080/api/students/1
+
+### Get students by major
+GET http://localhost:8080/api/students/major/Computer%20Science
+
+### Filter by GPA
+GET http://localhost:8080/api/students/filter?gpa=3.5
+
+### Register a new student
+POST http://localhost:8080/api/students
+Content-Type: application/json
+
+{
+    "firstName": "Eva",
+    "lastName": "Green",
+    "email": "eva@example.com",
+    "major": "Biology",
+    "gpa": 3.7
+}
+
+### Update student info
+PUT http://localhost:8080/api/students/1
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Doe Updated",
+    "email": "john.updated@example.com",
+    "major": "Computer Science",
+    "gpa": 3.9
+}
+
+### 3. Restaurant Menu API
+
+# Get all menu items
+GET http://localhost:8080/api/menu
+
+### Get menu item by ID
+GET http://localhost:8080/api/menu/1
+
+### Get items by category
+GET http://localhost:8080/api/menu/category/Appetizer
+
+### Get available items
+GET http://localhost:8080/api/menu/available
+
+### Search items by name
+GET http://localhost:8080/api/menu/search?name=Chicken
+
+### Add new menu item
+POST http://localhost:8080/api/menu
+Content-Type: application/json
+
+{
+    "name": "Pizza Margherita",
+    "description": "Classic pizza with tomato and mozzarella",
+    "price": 12.99,
+    "category": "Main Course",
+    "available": true
+}
+
+### Toggle availability
+PUT http://localhost:8080/api/menu/1/availability
+
+### Remove menu item
+DELETE http://localhost:8080/api/menu/1
+
+### 4. E-Commerce Product API
+
+# Get all products
+GET http://localhost:8080/api/products
+
+### Get all products with pagination
+GET http://localhost:8080/api/products?page=1&limit=5
+
+### Get product by ID
+GET http://localhost:8080/api/products/1
+
+### Get items by category
+GET http://localhost:8080/api/products/category/Electronics
+
+### Get items by brand
+GET http://localhost:8080/api/products/brand/BrandA
+
+### Search products
+GET http://localhost:8080/api/products/search?keyword=phone
+
+### Filter by price range
+GET http://localhost:8080/api/products/price-range?min=100&max=500
+
+### Get in-stock products
+GET http://localhost:8080/api/products/in-stock
+
+### Add new product
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+    "name": "Tablet",
+    "description": "10-inch tablet",
+    "price": 299.99,
+    "category": "Electronics",
+    "stockQuantity": 45,
+    "brand": "BrandX"
+}
+
+### Update product
+PUT http://localhost:8080/api/products/1
+Content-Type: application/json
+
+{
+    "name": "Smartphone Pro",
+    "description": "Updated smartphone description",
+    "price": 799.99,
+    "category": "Electronics",
+    "stockQuantity": 50,
+    "brand": "BrandA"
+}
+
+### Update stock quantity
+PATCH http://localhost:8080/api/products/1/stock?quantity=100
+
+### Delete product
+DELETE http://localhost:8080/api/products/1
+
+### 5. Task Management API
+
+# Get all tasks
+GET http://localhost:8080/api/tasks
+
+### Get task by ID
+GET http://localhost:8080/api/tasks/1
+
+### Filter by status
+GET http://localhost:8080/api/tasks/status?completed=true
+
+### Filter by priority
+GET http://localhost:8080/api/tasks/priority/HIGH
+
+### Create task
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+    "title": "Do Laundry",
+    "description": "Wash and fold clothes",
+    "completed": false,
+    "priority": "LOW",
+    "dueDate": "2023-11-20"
+}
+
+### Update task
+PUT http://localhost:8080/api/tasks/1
+Content-Type: application/json
+
+{
+    "title": "Assignment Complete",
+    "description": "Submitted Spring Boot assignment",
+    "completed": true,
+    "priority": "HIGH",
+    "dueDate": "2023-12-31"
+}
+
+### Mark as completed
+PATCH http://localhost:8080/api/tasks/2/complete
+
+### Delete task
+DELETE http://localhost:8080/api/tasks/3
+
+### Bonus: User Profile API
+
+# Get all users
+GET http://localhost:8080/api/users
+
+### Get user by ID
+GET http://localhost:8080/api/users/1
+
+### Search users
+GET http://localhost:8080/api/users/search?username=john
+
+### Create user
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+    "username": "new_user",
+    "email": "new@example.com",
+    "fullName": "New User",
+    "age": 28,
+    "country": "France",
+    "bio": "Designer",
+    "active": true
+}
+
+### Update user
+PUT http://localhost:8080/api/users/1
+Content-Type: application/json
+
+{
+    "username": "john_doe_updated",
+    "email": "john@example.com",
+    "fullName": "John Doe",
+    "age": 31,
+    "country": "USA",
+    "bio": "Senior Java Developer",
+    "active": true
+}
+
+### Update user status
+PATCH http://localhost:8080/api/users/1/status?active=false
+
+### Delete user
+DELETE http://localhost:8080/api/users/2
